@@ -10,9 +10,8 @@ var dirs = {
     }
 
 var input_array = Array()
-var input_vec setget ,_get_input_vec
 
-func _get_input_vec():
+func get_input_vec():
     if input_array.empty():
         return Vector2.ZERO
     else:
