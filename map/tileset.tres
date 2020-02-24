@@ -30,7 +30,7 @@ points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
 points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
 
 [sub_resource type="ConvexPolygonShape2D" id=10]
-points = PoolVector2Array( 0, 16, 0, 14, 1, 14, 1, 10, 2, 10, 2, 9, 3, 9, 3, 8, 5, 8, 5, 6, 6, 6, 6, 4, 8, 4, 8, 2, 9, 2, 9, 1, 10, 1, 10, 0, 14, 0, 14, 1, 15, 1, 15, 3, 16, 3, 16, 16 )
+points = PoolVector2Array( 0, 8, 8, 8, 8, 0, 16, 0, 16, 16, 0, 16 )
 
 [sub_resource type="ConvexPolygonShape2D" id=11]
 points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
@@ -39,16 +39,16 @@ points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
 points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
 
 [sub_resource type="ConvexPolygonShape2D" id=13]
-points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
+points = PoolVector2Array( 8, 0, 16, 0, 16, 16, 0, 16, 0, 8, 8, 8 )
 
 [sub_resource type="ConvexPolygonShape2D" id=14]
 points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
 
 [sub_resource type="ConvexPolygonShape2D" id=15]
-points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
+points = PoolVector2Array( 0, 0, 8, 0, 8, 8, 16, 8, 16, 16, 0, 16 )
 
 [sub_resource type="ConvexPolygonShape2D" id=16]
-points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
+points = PoolVector2Array( 16, 0, 16, 16, 8, 16, 8, 8, 0, 8, 0, 0 )
 
 [sub_resource type="ConvexPolygonShape2D" id=17]
 points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
@@ -57,7 +57,7 @@ points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
 points = PoolVector2Array( 0, 2, 1, 2, 1, 1, 2, 1, 2, 0, 6, 0, 6, 1, 7, 1, 7, 3, 8, 3, 8, 4, 9, 4, 9, 3, 10, 3, 10, 2, 11, 2, 11, 1, 13, 1, 13, 2, 14, 2, 14, 3, 15, 3, 15, 5, 16, 5, 16, 16, 0, 16 )
 
 [sub_resource type="ConvexPolygonShape2D" id=19]
-points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
+points = PoolVector2Array( 0, 0, 16, 0, 16, 8, 8, 8, 8, 16, 0, 16 )
 
 [sub_resource type="ConvexPolygonShape2D" id=20]
 points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
@@ -96,7 +96,7 @@ points = PoolVector2Array( 16, 16, 0, 16, 0, 0, 16, 0 )
 points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
 
 [resource]
-0/name = "0_00"
+0/name = "0_03"
 0/texture = ExtResource( 1 )
 0/tex_offset = Vector2( 0, 0 )
 0/modulate = Color( 1, 1, 1, 1 )
@@ -106,7 +106,7 @@ points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
 0/navigation_offset = Vector2( 0, 0 )
 0/shapes = [  ]
 0/z_index = 0
-1/name = "0_01"
+1/name = "0_04"
 1/texture = ExtResource( 1 )
 1/tex_offset = Vector2( 0, 0 )
 1/modulate = Color( 1, 1, 1, 1 )
@@ -212,7 +212,7 @@ points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
 7/z_index = 0
-8/name = "0_04"
+8/name = "0_07"
 8/texture = ExtResource( 1 )
 8/tex_offset = Vector2( 0, 0 )
 8/modulate = Color( 1, 1, 1, 1 )
@@ -228,7 +228,7 @@ points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
 8/z_index = 0
-9/name = "0_03"
+9/name = "0_06"
 9/texture = ExtResource( 1 )
 9/tex_offset = Vector2( 0, 0 )
 9/modulate = Color( 1, 1, 1, 1 )
@@ -408,7 +408,7 @@ points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
 20/navigation_offset = Vector2( 0, 0 )
 20/shapes = [  ]
 20/z_index = 0
-21/name = "tilesheet.png 21"
+21/name = "tilesheet.png 22"
 21/texture = ExtResource( 1 )
 21/tex_offset = Vector2( 0, 0 )
 21/modulate = Color( 1, 1, 1, 1 )
@@ -418,7 +418,7 @@ points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
 21/navigation_offset = Vector2( 0, 0 )
 21/shapes = [  ]
 21/z_index = 0
-22/name = "tilesheet.png 22"
+22/name = "tilesheet.png 23"
 22/texture = ExtResource( 1 )
 22/tex_offset = Vector2( 0, 0 )
 22/modulate = Color( 1, 1, 1, 1 )
@@ -428,7 +428,7 @@ points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
 22/navigation_offset = Vector2( 0, 0 )
 22/shapes = [  ]
 22/z_index = 0
-23/name = "tilesheet.png 23"
+23/name = "tilesheet.png 21"
 23/texture = ExtResource( 1 )
 23/tex_offset = Vector2( 0, 0 )
 23/modulate = Color( 1, 1, 1, 1 )
@@ -652,7 +652,7 @@ points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
 36/z_index = 0
-37/name = "0_02"
+37/name = "0_05"
 37/texture = ExtResource( 1 )
 37/tex_offset = Vector2( 0, 0 )
 37/modulate = Color( 1, 1, 1, 1 )
@@ -662,7 +662,7 @@ points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
 37/navigation_offset = Vector2( 0, 0 )
 37/shapes = [  ]
 37/z_index = 0
-38/name = "0_05"
+38/name = "0_08"
 38/texture = ExtResource( 1 )
 38/tex_offset = Vector2( 0, 0 )
 38/modulate = Color( 1, 1, 1, 1 )

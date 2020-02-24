@@ -16,12 +16,15 @@ _global_script_class_icons={
 [application]
 
 config/name="crowns"
+run/main_scene="res://game.tscn"
 config/icon="res://icon.png"
 
 [display]
 
 window/size/width=512
 window/size/height=352
+window/stretch/mode="2d"
+window/stretch/aspect="keep"
 
 [importer_defaults]
 
@@ -72,3 +75,7 @@ right={
 , Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":68,"unicode":0,"echo":false,"script":null)
  ]
 }
+
+[rendering]
+
+quality/2d/use_pixel_snap=true

@@ -6,6 +6,7 @@ func _run():
     var nd = get_tile_names(ts)
     for i in nd.keys():
         nd[i] = change_name_suffix(nd[i])
+        print(nd[i])
         ts.tile_set_name(i, nd[i])
 
 func get_tile_names(ts : TileSet):
@@ -21,6 +22,6 @@ func change_name_suffix(name : String):
     var digit
     for i in range(10):
         var d = String(i)
-        if name.ends_with(" "+d):
-            return name.trim_suffix(" "+d)+" 0"+d
+        if (name == "0_0"+d):
+            return name.substr(0, 3)+String(int(d)+3)
     return name
