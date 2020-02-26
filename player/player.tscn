@@ -1,9 +1,8 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=14 format=2]
 
-[ext_resource path="res://player/sprite.gd" type="Script" id=1]
 [ext_resource path="res://player/player_move_sheet.png" type="Texture" id=2]
 [ext_resource path="res://player/player.gd" type="Script" id=3]
-[ext_resource path="res://player/sword.tscn" type="PackedScene" id=4]
+[ext_resource path="res://player/animator.gd" type="Script" id=6]
 
 [sub_resource type="Animation" id=1]
 resource_name = "act_down"
@@ -21,7 +20,7 @@ tracks/0/keys = {
 "values": [ 6, 1 ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("sword_pos:position")
+tracks/1/path = NodePath("Weapon:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -33,7 +32,7 @@ tracks/1/keys = {
 "values": [ Vector2( 0, -3 ) ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("sword_pos:rotation_degrees")
+tracks/2/path = NodePath("Weapon:rotation_degrees")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -45,7 +44,7 @@ tracks/2/keys = {
 "values": [ 0.0 ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("sword_pos:z_index")
+tracks/3/path = NodePath("Weapon:z_index")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/imported = false
@@ -73,7 +72,7 @@ tracks/0/keys = {
 "values": [ 7, 2 ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("sword_pos:position")
+tracks/1/path = NodePath("Weapon:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -85,7 +84,7 @@ tracks/1/keys = {
 "values": [ Vector2( -10, -14 ) ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("sword_pos:rotation_degrees")
+tracks/2/path = NodePath("Weapon:rotation_degrees")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -97,7 +96,7 @@ tracks/2/keys = {
 "values": [ -270.0 ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("sword_pos:z_index")
+tracks/3/path = NodePath("Weapon:z_index")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/imported = false
@@ -106,7 +105,7 @@ tracks/3/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ 0 ]
+"values": [ -1 ]
 }
 
 [sub_resource type="Animation" id=3]
@@ -125,7 +124,7 @@ tracks/0/keys = {
 "values": [ 7, 2 ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("sword_pos:position")
+tracks/1/path = NodePath("Weapon:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -137,7 +136,7 @@ tracks/1/keys = {
 "values": [ Vector2( 10, -13 ) ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("sword_pos:rotation_degrees")
+tracks/2/path = NodePath("Weapon:rotation_degrees")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -149,7 +148,7 @@ tracks/2/keys = {
 "values": [ 270.0 ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("sword_pos:z_index")
+tracks/3/path = NodePath("Weapon:z_index")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/imported = false
@@ -158,7 +157,7 @@ tracks/3/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ 0 ]
+"values": [ -1 ]
 }
 
 [sub_resource type="Animation" id=4]
@@ -177,7 +176,7 @@ tracks/0/keys = {
 "values": [ 8, 5 ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("sword_pos:position")
+tracks/1/path = NodePath("Weapon:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -189,7 +188,7 @@ tracks/1/keys = {
 "values": [ Vector2( 0, -27 ) ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("sword_pos:rotation_degrees")
+tracks/2/path = NodePath("Weapon:rotation_degrees")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -201,7 +200,7 @@ tracks/2/keys = {
 "values": [ 180.0 ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("sword_pos:z_index")
+tracks/3/path = NodePath("Weapon:z_index")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/imported = false
@@ -277,7 +276,7 @@ const DEBUG_FACING = 1
 const DEBUG_ANIM = 2
 
 func _process(_delta):
-    text = \"Hello World\"
+    text = \"\"
     if flags & DEBUG_FACING:
         text += \"\\nfacing: \"+String(player.facing)
     if flags & DEBUG_ANIM:
@@ -286,8 +285,6 @@ func _process(_delta):
 
 [node name="Player" type="KinematicBody2D"]
 script = ExtResource( 3 )
-sprite_path = NodePath("Sprite")
-sword_path = ExtResource( 4 )
 speed = 200
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -298,6 +295,7 @@ anims/act_up = SubResource( 4 )
 anims/walk_down = SubResource( 5 )
 anims/walk_side = SubResource( 6 )
 anims/walk_up = SubResource( 7 )
+script = ExtResource( 6 )
 
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( 0, -16 )
@@ -307,12 +305,11 @@ flip_h = true
 vframes = 2
 hframes = 6
 frame = 7
-script = ExtResource( 1 )
-animator_path = NodePath("../AnimationPlayer")
 
-[node name="sword_pos" type="Position2D" parent="."]
-position = Vector2( 10, -13 )
-rotation = 4.71238
+[node name="Weapon" type="Position2D" parent="."]
+position = Vector2( -10, -14 )
+rotation = -4.71239
+z_index = -1
 
 [node name="BoundingBox" type="CollisionShape2D" parent="."]
 position = Vector2( 0, -6 )
@@ -325,11 +322,10 @@ shape = SubResource( 9 )
 disabled = true
 
 [node name="Label" type="Label" parent="."]
-visible = false
-margin_left = 22.0
-margin_top = -22.0
-margin_right = 62.0
-margin_bottom = -8.0
+margin_left = 20.0
+margin_top = -47.0
+margin_right = 60.0
+margin_bottom = -33.0
 script = SubResource( 10 )
 __meta__ = {
 "_edit_use_anchors_": false

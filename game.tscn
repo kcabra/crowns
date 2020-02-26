@@ -1,10 +1,9 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://player/player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://map/map.tscn" type="PackedScene" id=2]
 [ext_resource path="res://map/camera.gd" type="Script" id=3]
 [ext_resource path="res://game.gd" type="Script" id=4]
-[ext_resource path="res://player/sword.tscn" type="PackedScene" id=5]
 
 [node name="game" type="Node2D"]
 script = ExtResource( 4 )
@@ -15,7 +14,6 @@ script = ExtResource( 4 )
 "player",
 ] instance=ExtResource( 1 )]
 position = Vector2( 240, 128 )
-sword_path = ExtResource( 5 )
 speed = 180
 
 [node name="Camera" type="Camera2D" parent="."]
